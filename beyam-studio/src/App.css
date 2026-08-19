@@ -423,6 +423,17 @@
   background: #faf9f6;
 }
 
+.intro-section,
+.expertise-section,
+.formations-section,
+.mobile-showcase,
+.web-showcase,
+.contact-section,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
 .web-showcase-heading { max-width: 1040px; margin-bottom: 70px; }
 .web-showcase-heading > p { margin: 0 0 24px; color: #087f9f; font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 .web-showcase-heading h2 { margin: 0; color: #303132; font-family: Arial, Helvetica, sans-serif; font-size: clamp(3.1rem, 5.05vw, 5.85rem); font-weight: 700; line-height: .94; letter-spacing: -.06em; }
@@ -461,12 +472,11 @@
 .confidentiality-note { max-width: 720px; margin: 86px 0 0 auto; padding-top: 26px; border-top: 1px solid rgba(6, 27, 66, .14); color: #626762; font-size: clamp(1rem, 1.35vw, 1.25rem); line-height: 1.5; }
 
 .contact-section {
-  min-height: 720px;
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(360px, .75fr);
-  align-items: end;
+  align-items: start;
   gap: clamp(52px, 8vw, 150px);
-  padding: 110px clamp(28px, 5vw, 96px) 120px;
+  padding: 96px clamp(28px, 5vw, 96px) 104px;
   background: #faf9f6;
   color: #303132;
 }

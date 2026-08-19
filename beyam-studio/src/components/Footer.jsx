@@ -27,7 +27,7 @@ export default function Footer() {
       >
         <div className="footer-brand-block">
           <div className="footer-brand-lockup">
-            <img src={bulbImage} alt="" aria-hidden="true" />
+            <img src={bulbImage} alt="" aria-hidden="true" loading="lazy" decoding="async" />
             <a className="footer-brand" href="#accueil" aria-label="Beyam Studio, retour à l’accueil">BEYAM</a>
           </div>
           <p>De l’idée à la production.</p>

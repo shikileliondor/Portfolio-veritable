@@ -8,7 +8,7 @@ function PhoneFrame({ image, className = '' }) {
     <div className={`phone-frame ${className}`}>
       <div className="phone-speaker" aria-hidden="true" />
       <div className="phone-screen">
-        <img src={image.src} alt={image.alt} draggable="false" />
+        <img src={image.src} alt={image.alt} draggable="false" loading="lazy" decoding="async" />
       </div>
     </div>
   )

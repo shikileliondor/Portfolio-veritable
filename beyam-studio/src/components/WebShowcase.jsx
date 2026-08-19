@@ -1,12 +1,14 @@
 import { ExternalLink } from 'lucide-react'
 import { motion } from 'motion/react'
 import schoolDashboardImage from '../assets/image web/WhatsApp Image 2026-08-19 at 11.34.35.jpeg'
+import ivoirCuissonImage from '../assets/image web/Capture d’écran 2026-08-19 084720.png'
 
 const projects = [
   {
     type: 'Site web',
     name: 'IvoirCuisson.ci',
     url: 'https://ivoircuisson.ci',
+    image: ivoirCuissonImage,
   },
   {
     type: 'Application web',
@@ -52,6 +54,7 @@ export default function WebShowcase() {
                   src={project.image}
                   alt="Tableau de bord de l’application de gestion scolaire"
                   loading="lazy"
+                  decoding="async"
                 />
               ) : project.url ? (
                 <iframe

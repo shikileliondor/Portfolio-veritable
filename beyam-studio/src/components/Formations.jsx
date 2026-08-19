@@ -54,7 +54,7 @@ export default function Formations() {
             transition={{ delay: index * 0.1, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
             <figure className="formation-card-media">
-              <img src={training.image} alt={training.imageAlt} loading="lazy" />
+              <img src={training.image} alt={training.imageAlt} loading="lazy" decoding="async" />
             </figure>
 
             <div className="formation-card-content">

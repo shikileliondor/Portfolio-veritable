@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'motion/react'
-import LoadingScreen from './components/LoadingScreen'
+import { motion } from 'motion/react'
 import Navbar from './components/Navbar'
 import Intro from './components/Intro'
 import Expertises from './components/Expertises'
@@ -55,20 +53,8 @@ const floatingMenuItems = [
 }))
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = window.setTimeout(() => setIsLoading(false), 7000)
-    return () => window.clearTimeout(timer)
-  }, [])
-
   return (
-    <>
-      <AnimatePresence mode="wait">
-        {isLoading ? (
-          <LoadingScreen key="loader" onComplete={() => setIsLoading(false)} />
-        ) : (
-          <motion.div key="site" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.55 }}>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
             <Navbar />
             <FloatingMenu items={floatingMenuItems} />
             <main id="accueil" className="editorial-hero">
@@ -95,7 +81,7 @@ function App() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.12 + index * 0.075, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
                     >
-                      <img src={image.src} alt={image.alt} loading={index > 1 ? 'lazy' : 'eager'} />
+                      <img src={image.src} alt={image.alt} loading={index > 1 ? 'lazy' : 'eager'} fetchPriority={index === 0 ? 'high' : 'auto'} decoding="async" />
                     </motion.figure>
                   ))}
                 </div>
@@ -108,10 +94,7 @@ function App() {
             <WebShowcase />
             <Contact />
             <Footer />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+    </motion.div>
   )
 }
 
