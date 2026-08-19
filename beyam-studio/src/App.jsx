@@ -1,4 +1,6 @@
-import { motion } from 'motion/react'
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
+import LoadingScreen from './components/LoadingScreen'
 import Navbar from './components/Navbar'
 import Intro from './components/Intro'
 import Expertises from './components/Expertises'
@@ -53,8 +55,21 @@ const floatingMenuItems = [
 }))
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const fallbackTimer = window.setTimeout(() => setIsLoading(false), 6000)
+    return () => window.clearTimeout(fallbackTimer)
+  }, [])
+
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
+    <>
+      <AnimatePresence>
+        {isLoading && (
+          <LoadingScreen key="loader" onComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45 }}>
             <Navbar />
             <FloatingMenu items={floatingMenuItems} />
             <main id="accueil" className="editorial-hero">
@@ -94,7 +109,8 @@ function App() {
             <WebShowcase />
             <Contact />
             <Footer />
-    </motion.div>
+      </motion.div>
+    </>
   )
 }
 
