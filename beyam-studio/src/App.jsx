@@ -11,13 +11,19 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FloatingMenu from './components/ui/liquid-morph-floating-menu'
 import applicationsImage from './assets/editorial/applications.jpg'
-import ideaImage from './assets/editorial/idea.jpg'
-import mobileImage from './assets/editorial/mobile-design.jpg'
+import browserGlassImage from './assets/editorial/abstract/browser-glass.jpg'
+import cursorPanelImage from './assets/editorial/abstract/cursor-panel.jpg'
+import mobileGlassImage from './assets/editorial/abstract/mobile-glass.jpg'
+import productionCubesImage from './assets/editorial/abstract/production-cubes.jpg'
+import uxRibbonsImage from './assets/editorial/abstract/ux-ribbons.jpg'
 import platformImage from './assets/editorial/platform.jpg'
-import productionImage from './assets/editorial/production.jpg'
-import uxImage from './assets/editorial/ux.jpg'
-import webImage from './assets/editorial/web.jpg'
 import './App.css'
+
+const ideaImage = browserGlassImage
+const webImage = cursorPanelImage
+const uxImage = uxRibbonsImage
+const mobileImage = mobileGlassImage
+const productionImage = productionCubesImage
 
 const editorialImages = [
   { src: ideaImage, alt: 'Une idée digitale qui prend forme', className: 'tile-1' },
